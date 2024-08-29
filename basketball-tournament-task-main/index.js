@@ -81,9 +81,8 @@ let grupaC = groups[2].C
 
 let ukupanPlasman = []
 let ekipeKojeIduDalje = []
-let najboljih8 = []
 
-let grupaAFunkcion = (grupa, slovo) => {
+let grupaFunkcion = (grupa, slovo) => {
     let ekipa1 = {
         naziv: grupa[0].Team,
         bodovi: 0,
@@ -263,15 +262,11 @@ let grupaAFunkcion = (grupa, slovo) => {
     let sortiraneEkipePoBodovima = [ekipa1, ekipa2, ekipa3, ekipa4]
     sortiraneEkipePoBodovima.sort((a, b) => b.bodovi - a.bodovi)
 
-    // let ekipeKojeIduDalje = []
-
     sortiraneEkipePoBodovima.forEach(tim => {
         console.log(`${tim.naziv} ${tim.bodovi} ${tim.postignutiPoeni} ${tim.primljeniPoeni} ${tim.kosRazlika}`);
-        // ekipeKojeIduDalje.push(tim.naziv)
-        ekipeKojeIduDalje.push(tim.naziv)
+        ekipeKojeIduDalje.push(tim)
     })
     ekipeKojeIduDalje.pop()
-    console.log(ekipeKojeIduDalje);
 
     return ekipeKojeIduDalje
 
@@ -285,14 +280,14 @@ let grupaAFunkcion = (grupa, slovo) => {
 
 
 }
-grupaAFunkcion(grupaA, 'A')
-grupaAFunkcion(grupaB, 'B')
-grupaAFunkcion(grupaC, 'C')
+grupaFunkcion(grupaA, 'A')
+grupaFunkcion(grupaB, 'B')
+grupaFunkcion(grupaC, 'C')
 
-najboljih8 = ekipeKojeIduDalje
-
-console.log('najboljih 8   ' + najboljih8);
-
+let najboljihOsam = ekipeKojeIduDalje
+najboljihOsam.sort((a, b) => b.bodovi - a.bodovi)
+najboljihOsam.pop()
+console.log(najboljihOsam);
 
 
 
