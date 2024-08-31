@@ -132,13 +132,6 @@ let grupaFunkcion = (grupa, slovo) => {
     let team3Score3 = Math.ceil((Math.random() + 9 - (grupa[2].FIBARanking / 10)) * 10)
     let team4Score3 = Math.ceil((Math.random() + 9 - (grupa[3].FIBARanking / 10)) * 10)
 
-    // let prviMec = `${grupa[0].Team} vs ${grupa[3].Team} (${team1Score1}:${team4Score1})`
-    // let drugiMec = `${grupa[1].Team} vs ${grupa[2].Team} (${team2Score1}:${team3Score1})`
-    // let treciMec = `${grupa[0].Team} vs ${grupa[1].Team} (${team1Score2}:${team2Score2})`
-    // let cetvrtiMec = `${grupa[3].Team} vs ${grupa[2].Team} (${team4Score2}:${team3Score2})`
-    // let petiMec = `${grupa[1].Team} vs ${grupa[3].Team} (${team2Score3}:${team4Score3})`
-    // let sestiMec = `${grupa[2].Team} vs ${grupa[0].Team} (${team3Score3}:${team1Score3})`
-
     let prviMec
     let drugiMec
     let treciMec
@@ -158,7 +151,7 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa4.primljeniPoeni += team1Score1
         ekipa1.kosRazlika += (team1Score1 - team4Score1)
         ekipa4.kosRazlika += (team4Score1 - team1Score1)
-        // console.log(`${grupa[0].Team} vs ${grupa[3].Team} (${team1Score1}:${team4Score1})`);
+
         prviMec = `${grupa[0].Team} vs ${grupa[3].Team} (${team1Score1}:${team4Score1})`
     }
     if (team1Score1 < team4Score1) {
@@ -172,15 +165,14 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa1.primljeniPoeni += team4Score1
         ekipa4.kosRazlika += (team4Score1 - team1Score1)
         ekipa1.kosRazlika += (team1Score1 - team4Score1)
-        // console.log(`${grupa[0].Team} vs ${grupa[3].Team} (${team1Score1}:${team4Score1})`);
+
         prviMec = `${grupa[0].Team} vs ${grupa[3].Team} (${team1Score1}:${team4Score1})`
     }
     if (team1Score1 == team4Score1) {
         let team1Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
         let team2Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
-        // console.log(`${grupa[0].Team} vs ${grupa[3].Team} (${team1Score1 + team1Produzetak}:${team4Score1 + team2Produzetak}) OT`);
-        prviMec = `${grupa[0].Team} vs ${grupa[3].Team} (${team1Score1 + team1Produzetak}:${team4Score1 + team2Produzetak}) OT`
 
+        prviMec = `${grupa[0].Team} vs ${grupa[3].Team} (${team1Score1 + team1Produzetak}:${team4Score1 + team2Produzetak}) OT`
         if ((team1Score1 + team1Produzetak) > (team4Score1 + team2Produzetak)) {
             ekipa1.pobede++
             ekipa4.porazi++
@@ -220,7 +212,6 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa2.kosRazlika += (team2Score1 - team3Score1)
         ekipa3.kosRazlika += (team3Score1 - team2Score1)
 
-        // console.log(`${grupa[1].Team} vs ${grupa[2].Team} (${team2Score1}:${team3Score1})`);
         drugiMec = `${grupa[1].Team} vs ${grupa[2].Team} (${team2Score1}:${team3Score1})`
     }
     if (team2Score1 < team3Score1) {
@@ -235,15 +226,13 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa3.kosRazlika += (team3Score1 - team2Score1)
         ekipa2.kosRazlika += (team2Score1 - team3Score1)
 
-        // console.log(`${grupa[1].Team} vs ${grupa[2].Team} (${team2Score1}:${team3Score1})`);
         drugiMec = `${grupa[1].Team} vs ${grupa[2].Team} (${team2Score1}:${team3Score1})`
     }
     if (team2Score1 == team3Score1) {
         let team1Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
         let team2Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
-        // console.log(`${grupa[1].Team} vs ${grupa[2].Team} (${team2Score1 + team1Produzetak}:${team3Score1 + team2Produzetak}) OT`);
-        drugiMec = `${grupa[1].Team} vs ${grupa[2].Team} (${team2Score1 + team1Produzetak}:${team3Score1 + team2Produzetak}) OT`
 
+        drugiMec = `${grupa[1].Team} vs ${grupa[2].Team} (${team2Score1 + team1Produzetak}:${team3Score1 + team2Produzetak}) OT`
         if ((team2Score1 + team1Produzetak) > (team3Score1 + team2Produzetak)) {
             ekipa2.pobede++
             ekipa3.porazi++
@@ -283,7 +272,6 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa1.kosRazlika += (team1Score2 - team2Score2)
         ekipa2.kosRazlika += (team2Score2 - team1Score2)
 
-        // console.log(`${grupa[0].Team} vs ${grupa[1].Team} (${team1Score2}:${team2Score2})`);
         treciMec = `${grupa[0].Team} vs ${grupa[1].Team} (${team1Score2}:${team2Score2})`
     }
     if (team1Score2 < team2Score2) {
@@ -298,13 +286,12 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa2.kosRazlika += (team2Score2 - team1Score2)
         ekipa1.kosRazlika += (team1Score2 - team2Score2)
 
-        // console.log(`${grupa[0].Team} vs ${grupa[1].Team} (${team1Score2}:${team2Score2})`);
         treciMec = `${grupa[0].Team} vs ${grupa[1].Team} (${team1Score2}:${team2Score2})`
     }
     if (team1Score2 == team2Score2) {
         let team1Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
         let team2Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
-        // console.log(`${grupa[0].Team} vs ${grupa[1].Team} (${team1Score2 + team1Produzetak}:${team2Score2 + team2Produzetak}) OT`);
+
         treciMec = `${grupa[0].Team} vs ${grupa[1].Team} (${team1Score2 + team1Produzetak}:${team2Score2 + team2Produzetak}) OT`
         if ((team1Score2 + team1Produzetak) > (team2Score2 + team2Produzetak)) {
             ekipa1.pobede++
@@ -345,7 +332,6 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa4.kosRazlika += (team4Score2 - team3Score2)
         ekipa3.kosRazlika += (team3Score2 - team4Score2)
 
-        // console.log(`${grupa[3].Team} vs ${grupa[2].Team} (${team4Score2}:${team3Score2})`);
         cetvrtiMec = `${grupa[3].Team} vs ${grupa[2].Team} (${team4Score2}:${team3Score2})`
     }
     if (team4Score2 < team3Score2) {
@@ -360,13 +346,12 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa3.kosRazlika += (team3Score2 - team4Score2)
         ekipa4.kosRazlika += (team4Score2 - team3Score2)
 
-        // console.log(`${grupa[3].Team} vs ${grupa[2].Team} (${team4Score2}:${team3Score2})`);
         cetvrtiMec = `${grupa[3].Team} vs ${grupa[2].Team} (${team4Score2}:${team3Score2})`
     }
     if (team4Score2 == team3Score2) {
         let team1Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
         let team2Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
-        // console.log(`${grupa[3].Team} vs ${grupa[2].Team} (${team4Score2 + team1Produzetak}:${team3Score2 + team2Produzetak}) OT`);
+
         cetvrtiMec = `${grupa[3].Team} vs ${grupa[2].Team} (${team4Score2 + team1Produzetak}:${team3Score2 + team2Produzetak}) OT`
         if ((team4Score2 + team1Produzetak) > (team3Score2 + team2Produzetak)) {
             ekipa4.pobede++
@@ -407,7 +392,6 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa2.kosRazlika += (team2Score3 - team4Score3)
         ekipa4.kosRazlika += (team4Score3 - team2Score3)
 
-        // console.log(`${grupa[1].Team} vs ${grupa[3].Team} (${team2Score3}:${team4Score3})`);
         petiMec = `${grupa[1].Team} vs ${grupa[3].Team} (${team2Score3}:${team4Score3})`
     }
     if (team2Score3 < team4Score3) {
@@ -422,15 +406,13 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa4.kosRazlika += (team4Score3 - team2Score3)
         ekipa2.kosRazlika += (team2Score3 - team4Score3)
 
-        // console.log(`${grupa[1].Team} vs ${grupa[3].Team} (${team2Score3}:${team4Score3})`);
         petiMec = `${grupa[1].Team} vs ${grupa[3].Team} (${team2Score3}:${team4Score3})`
     }
     if (team2Score3 == team4Score3) {
         let team1Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
         let team2Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
-        // console.log(`${grupa[1].Team} vs ${grupa[3].Team} (${team2Score3 + team1Produzetak}:${team4Score3 + team2Produzetak}) OT`);
-        petiMec = `${grupa[1].Team} vs ${grupa[3].Team} (${team2Score3 + team1Produzetak}:${team4Score3 + team2Produzetak}) OT`
 
+        petiMec = `${grupa[1].Team} vs ${grupa[3].Team} (${team2Score3 + team1Produzetak}:${team4Score3 + team2Produzetak}) OT`
         if ((team2Score3 + team1Produzetak) > (team4Score3 + team2Produzetak)) {
             ekipa2.pobede++
             ekipa4.porazi++
@@ -470,9 +452,7 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa3.kosRazlika += (team3Score3 - team1Score3)
         ekipa1.kosRazlika += (team1Score3 - team3Score3)
 
-        // console.log(`${grupa[2].Team} vs ${grupa[0].Team} (${team3Score3}:${team1Score3})`);
         sestiMec = `${grupa[2].Team} vs ${grupa[0].Team} (${team3Score3}:${team1Score3})`
-
     }
     if (team3Score3 < team1Score3) {
         ekipa1.pobede++
@@ -486,14 +466,12 @@ let grupaFunkcion = (grupa, slovo) => {
         ekipa1.kosRazlika += (team1Score3 - team3Score3)
         ekipa3.kosRazlika += (team3Score3 - team1Score3)
 
-        // console.log(`${grupa[2].Team} vs ${grupa[0].Team} (${team3Score3}:${team1Score3})`);
         sestiMec = `${grupa[2].Team} vs ${grupa[0].Team} (${team3Score3}:${team1Score3})`
-
     }
     if (team3Score3 == team1Score3) {
         let team1Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
         let team2Produzetak = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 2)
-        // console.log(`${grupa[2].Team} vs ${grupa[0].Team} (${team3Score3 + team1Produzetak}:${team1Score3 + team2Produzetak}) OT`);
+
         sestiMec = `${grupa[2].Team} vs ${grupa[0].Team} (${team3Score3 + team1Produzetak}:${team1Score3 + team2Produzetak}) OT`
         if ((team3Score3 + team1Produzetak) > (team1Score3 + team2Produzetak)) {
             ekipa3.pobede++
@@ -539,7 +517,6 @@ let grupaFunkcion = (grupa, slovo) => {
 
     console.log(`   Grupa ${slovo} (Ime - pobede/porazi/bodovi/postignuti koševi/primljeni koševi/koš razlika)`);
     sortiraneEkipePoBodovima.forEach((tim, index) => {
-
         console.log(`   ${index + 1}. ${tim.naziv} ${tim.pobede} / ${tim.porazi} / ${tim.bodovi} / ${tim.postignutiPoeni} / ${tim.primljeniPoeni} / ${tim.kosRazlika}`);
         ekipeKojeIduDalje.push(tim)
     })
@@ -579,7 +556,6 @@ najboljihOsam.sort((a, b) => {
     }
 })
 najboljihOsam.pop()
-// console.log(najboljihOsam);
 
 let sesirD = najboljihOsam.splice(0, 2)
 let sesirE = najboljihOsam.splice(0, 2)
@@ -617,12 +593,6 @@ let treceplasirani
 let drugoplasirani
 let prvoplasirani
 
-
-// console.log('sesir D :  ', sesirD);
-// console.log('sesir E :  ', sesirE);
-// console.log('sesir F :  ', sesirF);
-// console.log('sesir G :  ', sesirG);
-
 //1/4 finals
 let teamD1 = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 10)
 let teamD2 = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 10)
@@ -633,8 +603,7 @@ let teamF2 = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10))
 let teamG1 = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 10)
 let teamG2 = Math.ceil((Math.random() + 9 - (Math.ceil(Math.random() * 8) / 10)) * 10)
 
-console.log(`Eliminaciona faza
-    `);
+console.log(`Eliminaciona faza`);
 console.log(`
     1/4 finale`);
 
@@ -746,8 +715,6 @@ if (teamSF1 == teamSF2) {
         treceMestoEkipa1 = polufinalista1
     }
 }
-
-
 
 if (teamSF3 > teamSF4) {
     console.log(`${polufinalista3} vs ${polufinalista4} (${teamSF3}:${teamSF4})`);
